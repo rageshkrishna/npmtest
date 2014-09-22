@@ -1,7 +1,14 @@
-language: python
-python:
- - 2.7
-install: true
-script:
+language: node_js
+
+node_js:
+ - 0.8.24
+
+before_install:
+ - sudo apt-get update
+ - sudo apt-get install libcairo2-dev libjpeg8-dev libpango1.0-dev libgif-dev build-essential g++
+ - npm install -g npm
+ - npm install -g grunt-cli
  - npm install -g bower
- - bower --version
+ - bower install
+
+script: true
